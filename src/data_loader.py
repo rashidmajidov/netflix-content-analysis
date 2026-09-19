@@ -8,4 +8,4 @@ def save_processed(df: pd.DataFrame, filename: str) -> None:
     df.to_csv(DATA_PROCESSED / filename, index=False)
 
 def load_processed(filename: str) -> pd.DataFrame:
-    return pd.read_csv(DATA_PROCESSED / filename)
+    return pd.read_csv(DATA_PROCESSED / filename, parse_dates=["date_added"])
